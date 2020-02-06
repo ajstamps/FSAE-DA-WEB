@@ -1,0 +1,74 @@
+{
+  "name": "fsae-da-web",
+  "description": "A cross-platform solution for the visualization of automotive data.",
+  "version": "0.1.0",
+  "license": "Modified MIT",
+  "productName": "FSAE-DA-WEB",
+  "homepage": "./",
+  "main": "public/electron.js",
+  "private": true,
+  "author": {
+    "email": "genzo.namikawa@jacks.sdstate.edu",
+    "name": "Genzo Namikawa"
+  },
+  "build": {
+    "appId": "com.electron.fsae-da-web",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "src/electron/static"
+    ],
+    "directories": {
+      "buildResources": "public",
+      "output": "dist"
+    }
+  },
+  "scripts": {
+    "react": "cross-env BROWSER=none react-scripts start",
+    "rbuild": "react-scripts build",
+    "electron": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "ebuild": "npm run compile && electron-builder",
+    "ebuild:dir": "npm run ebuild --dir -c.compression=store -c.mac.identity=null",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "electron-is-dev": "^1.1.0",
+    "electron-packager": "^14.2.0",
+    "electron-store": "^5.1.0",
+    "is-electron": "^2.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.0",
+    "source-map-support": "^0.5.16"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.0",
+    "electron": "^7.1.10",
+    "electron-builder": "^22.3.2",
+    "electron-reload": "^1.5.0",
+    "electron-webpack": "^2.7.4",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "wait-on": "^4.0.0"
+  }
+}
