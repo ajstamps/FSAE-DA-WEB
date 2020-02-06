@@ -1,9 +1,0 @@
-{
-    "Application": {
-        "Name": "FSAE-DA"
-    },
-    "Server": {
-        "Name": "DevServer",
-        "Host": "localhost"
-    }
-}
