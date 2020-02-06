@@ -1,5 +1,7 @@
 # [FSAE-DA-Web] Fomula Society of Automotive Engineers - Website/Application
 
+# [DOCUMENTATION OUTDATED]
+
 ## Description
 A cross-platform solution for the visualization of automotive data.
 
