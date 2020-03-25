@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import GridLayout from "../components/GridLayout"
 import StyledLineGraph from '../components/StyledLineGraph';
-import PropTypes from "prop-types";
-import { withRouter } from 'react-router-dom';
 
 const Columns4 = [
     ['x1', 41, 23, 36, 54, 57, 208],
@@ -16,18 +14,17 @@ const Binding = {
 };
 
 export default class ControlsPage extends Component{
-    static propTypes = {
-    }
     static defaultProps = {
+
     }
     state = {
 
     }
     render(){
         return (
-            <GridLayout>
+            <Grid>
                 <StyledLineGraph data={Columns4} bind={Binding}/>
-            </GridLayout>
+            </Grid>
         );
     }
-}
+} 

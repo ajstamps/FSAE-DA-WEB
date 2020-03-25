@@ -1,26 +1,63 @@
 import React, {Component, Suspense} from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Message, Button, Segment, Form, Header, Image, Grid, HeaderContent } from "semantic-ui-react";
+import { Placeholder, Card, Segment, Grid, Image } from "semantic-ui-react";
 import { Pane, Text, Dialog } from "evergreen-ui";
 import ReactDOM from 'react-dom';
-import "./LandingPage.css";
 import FsaeIcon from "../assets/icon.png";
+import Gorilla from "../assets/Gorilla.jpg";
+
+// const Gorilla = React.lazy( () => import("../assets/Gorilla.jpg") );
 
 export default class Homepage extends Component{
-    state = {isShown: false};
-    render(){
-        return (
-            <Pane>
-                <Dialog
-                    isShown={this.state.isShown}
-                    onCloseComplete={() => this.setState({ isShown: false })}
-                    hasHeader={false}
-                    >
-                    <Header>FSAE</Header>
-                </Dialog>
+    
+    Elements = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 
-                <Button onClick={() => this.setState({ isShown: true })}>Show Dialog</Button>
-            </Pane>
+    FallbackSelectionItem(){
+        return (
+            <Grid.Column computer="4" mobile="16" tablet="8" widescreen="4" largeScreen="4" >
+                <Segment>
+                    <Placeholder>
+                        
+                    </Placeholder>
+                    <Card.Content>
+                    <Placeholder>
+                        <Placeholder.Line/>
+                        <Placeholder.Line/>
+                        <Placeholder.Line/>
+                        <Placeholder.Line/>
+                        <Placeholder.Line/>
+                    </Placeholder>
+                    </Card.Content>
+                </Segment>
+            </Grid.Column>
+        )
+    }
+    SelectionItem = (
+        <Grid.Column computer="4" mobile="16" tablet="8" widescreen="4" largeScreen="4" >
+            <Segment>
+                <Placeholder>
+                    <Suspense fallback={<Placeholder.Image square/>}>
+                        <Image src={Gorilla}/>
+                    </Suspense>
+                </Placeholder>
+                <Card.Content>
+                <Placeholder>
+                    <Placeholder.Line/>
+                    <Placeholder.Line/>
+                    <Placeholder.Line/>
+                    <Placeholder.Line/>
+                    <Placeholder.Line/>
+                </Placeholder>
+                </Card.Content>
+            </Segment>
+        </Grid.Column>
+    );
+
+    render(){
+        return(
+            <Grid>
+                {this.Elements.map(x => this.SelectionItem)}
+            </Grid>
         );
     }
 }
