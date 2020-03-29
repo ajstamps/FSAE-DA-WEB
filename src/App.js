@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import LandingPage from "./pages/LandingPage";
+import {Grid, Container, Image} from "semantic-ui-react";
+import LoginForm from "./components/LoginForm"
+import LoginPage from "./pages/LoginPage"
+import ThemeBg from "./components/ThemeBg"
+import ErrorPage from "./pages/ErrorPage"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+let ActivePage = "landing"
+
+function App() { 
+  switch(ActivePage){
+    case "landing": return <LandingPage/>;
+    default: return <ErrorPage/>;
+  }
 }
 
 export default App;
