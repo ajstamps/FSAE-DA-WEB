@@ -10,7 +10,7 @@ RUN yes | apt-get upgrade
 RUN yes | apt-get install git
 RUN yes | apt-get install apache2
 
-RUN cd ./FSAE-DA-WEB && npm install
+RUN cd ./FSAE-DA-WEB && npm install --no-package-lock
 RUN cd ./FSAE-DA-WEB && npm run rbuild
 RUN cp -r ./FSAE-DA-WEB/build/* /var/www/html/
 
