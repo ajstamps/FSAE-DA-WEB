@@ -1,9 +1,9 @@
 {
-  "name": "fsae-da-web",
-  "description": "A cross-platform solution for the visualization of automotive data.",
+  "name": "grapher",
+  "description": "A graph visualization tool for automotive data.",
   "version": "0.1.0",
   "license": "Modified MIT",
-  "productName": "FSAE-DA-WEB",
+  "productName": "Grapher",
   "homepage": "./",
   "main": "./src/index.js",
   "private": true,
