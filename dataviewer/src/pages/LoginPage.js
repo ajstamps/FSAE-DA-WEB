@@ -2,7 +2,6 @@ import React from 'react';
 import LandingPage from "./LandingPage";
 import {Grid, Container, Image} from "semantic-ui-react";
 import LoginForm from "../components/LoginForm"
-import ThemeBg from "../components/ThemeBg"
 
 function LoginPage() {
   return (
